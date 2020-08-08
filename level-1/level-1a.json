@@ -1,0 +1,601 @@
+{
+  "paragraphs": [
+    {
+      "title": "",
+      "text": "%pyspark\nfrom pyspark import SparkFiles\nurl \u003d \"https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Musical_Instruments_v1_00.tsv.gz\"\nspark.sparkContext.addFile(url)\nmusical_instruments_df \u003d spark.read.csv(SparkFiles.get(\"amazon_reviews_us_Musical_Instruments_v1_00.tsv.gz\"), sep\u003d\"\\t\", header\u003dTrue)\nmusical_instruments_df.show()",
+      "user": "",
+      "dateUpdated": "2020-08-07 23:17:06.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+-----------+-----------+--------------+----------+--------------+--------------------+-------------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-----------+\n|marketplace|customer_id|     review_id|product_id|product_parent|       product_title|   product_category|star_rating|helpful_votes|total_votes|vine|verified_purchase|     review_headline|         review_body|review_date|\n+-----------+-----------+--------------+----------+--------------+--------------------+-------------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-----------+\n|         US|   45610553| RMDCHWD0Y5OZ9|B00HH62VB6|     618218723|AGPtek® 10 Isolat...|Musical Instruments|          3|            0|          1|   N|                N|         Three Stars|Works very good, ...| 2015-08-31|\n|         US|   14640079| RZSL0BALIYUNU|B003LRN53I|     986692292|Sennheiser HD203 ...|Musical Instruments|          5|            0|          0|   N|                Y|          Five Stars|Nice headphones a...| 2015-08-31|\n|         US|    6111003| RIZR67JKUDBI0|B0006VMBHI|     603261968|AudioQuest LP rec...|Musical Instruments|          3|            0|          1|   N|                Y|         Three Stars|removes dust. doe...| 2015-08-31|\n|         US|    1546619|R27HL570VNL85F|B002B55TRG|     575084461|Hohner Inc. 560BX...|Musical Instruments|          5|            0|          0|   N|                Y|I purchase these ...|I purchase these ...| 2015-08-31|\n|         US|   12222213|R34EBU9QDWJ1GD|B00N1YPXW2|     165236328|Blue Yeti USB Mic...|Musical Instruments|          5|            0|          0|   N|                Y|          Five Stars|This is an awesom...| 2015-08-31|\n|         US|   46018513|R1WCUI4Z1SIQEO|B001N4GRGS|     134151483|Middle Atlantic P...|Musical Instruments|          5|            0|          0|   N|                N|          Five Stars|Used to cool equi...| 2015-08-31|\n|         US|   10225065| RL5LNO26GAVJ1|B009PJRMHQ|     694166585|Kmise 1pc Pickgua...|Musical Instruments|          2|            3|          4|   N|                Y|Will not Fit Epip...|Note- Does not Fi...| 2015-08-31|\n|         US|    6356995|R3GYQ5W8JHP8SB|B00NKBDAZS|     446431775|Kealoha Concert U...|Musical Instruments|          5|            0|          0|   N|                Y|          Five Stars|Well built Ukulel...| 2015-08-31|\n|         US|   35297198|R30SHYQXGG5EYC|B006MIU7U2|     125871705|Halco 80000 - MR1...|Musical Instruments|          5|            0|          0|   N|                Y|Works fine. Hope ...|Had to replace a ...| 2015-08-31|\n|         US|   32139520|R14YLXA56NP51I|B000FIBD0I|     771888534|Gator GPTBLACK Pl...|Musical Instruments|          5|            1|          1|   N|                N|I upgraded the po...|I\u0027ve owned multip...| 2015-08-31|\n|         US|   36060782|R1ZH0HSH38IOTZ|B0002E52GG|      68535945|Hetman 1 - Light ...|Musical Instruments|          5|            0|          0|   N|                Y|My son\u0027s favourit...|Consistent qualit...| 2015-08-31|\n|         US|    5301309|R3H53KLLC210XI|B00RZIH52G|     725541773|Dragonpad pop fil...|Musical Instruments|          4|            0|          0|   N|                Y|Great pop filter ...|by far the best p...| 2015-08-31|\n|         US|   37472935|R3OOR877NGA8JK|B001792BAU|      46570323|DharmaObjects Rel...|Musical Instruments|          3|            0|          0|   N|                Y|                  Ok|Beautiful set. On...| 2015-08-31|\n|         US|   33578270|R1BY7WKOZ3KMH0|B009GSKW1Y|     547963417|Musiclily SSS Pla...|Musical Instruments|          2|            0|          0|   N|                Y|           Two Stars|Bridge pickup was...| 2015-08-31|\n|         US|   22070226| RXP1TFSWE8EG9|B0002F4TKA|     436074323|Vic Firth America...|Musical Instruments|          5|            0|          0|   N|                Y|          Five Stars|Feels good and la...| 2015-08-31|\n|         US|   52862655|R3J44DPP12OTLJ|B00K17YFBW|      81933093|Guitar Stand for ...|Musical Instruments|          5|            0|          0|   N|                Y|Great stand... on...|I love the stand....| 2015-08-31|\n|         US|    4427243| RFOV69SK0T676|B00EQ24HJS|     669249276|Generic 3PLY Faux...|Musical Instruments|          5|            0|          0|   N|                Y|Looks great. You ...|On time. Looks gr...| 2015-08-31|\n|         US|   14108571|R2HUWDNW62FOL3|B00IBOYTUE|     749537231|Audio 2000 6525 3...|Musical Instruments|          1|            0|          0|   N|                Y|  Poor sound quality|I was hoping it w...| 2015-08-31|\n|         US|   27314089|R1KSU30XZGR452|B00FBRUSAE|     792472601|Sawtooth ST-AMP-1...|Musical Instruments|          5|            0|          0|   N|                Y|Perfect for the b...|Good sound for it...| 2015-08-31|\n|         US|   16735445|R2TZVLLTSHA07N|B0113D2QUO|     269114019|Upado Unlimited G...|Musical Instruments|          5|            1|          1|   N|                Y|It really is a mu...|Wow! I didn\u0027t exp...| 2015-08-31|\n+-----------+-----------+--------------+----------+--------------+--------------------+-------------------+-----------+-------------+-----------+----+-----------------+--------------------+--------------------+-----------+\nonly showing top 20 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20200728-234919_1096987802",
+      "dateCreated": "2020-07-28 23:49:19.000",
+      "dateStarted": "2020-08-07 23:17:04.845",
+      "dateFinished": "2020-08-07 23:17:06.192",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# Row Count\nmusical_instruments_df.count()",
+      "user": "",
+      "dateUpdated": "2020-08-07 23:17:27.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "904765",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20200728-234919_645236236",
+      "dateCreated": "2020-07-28 23:49:19.000",
+      "dateStarted": "2020-08-07 23:17:06.194",
+      "dateFinished": "2020-08-07 23:17:27.825",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\nfrom pyspark.sql.functions import to_date\n# Review DataFrame\nreview_id_df \u003d musical_instruments_df.select([\"review_id\", \"customer_id\", \"product_id\", \"product_parent\", to_date(\"review_date\", \u0027yyyy-MM-dd\u0027).alias(\"review_date\")])\nreview_id_df.show()",
+      "user": "",
+      "dateUpdated": "2020-08-07 23:17:28.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+--------------+-----------+----------+--------------+-----------+\n|     review_id|customer_id|product_id|product_parent|review_date|\n+--------------+-----------+----------+--------------+-----------+\n| RMDCHWD0Y5OZ9|   45610553|B00HH62VB6|     618218723| 2015-08-31|\n| RZSL0BALIYUNU|   14640079|B003LRN53I|     986692292| 2015-08-31|\n| RIZR67JKUDBI0|    6111003|B0006VMBHI|     603261968| 2015-08-31|\n|R27HL570VNL85F|    1546619|B002B55TRG|     575084461| 2015-08-31|\n|R34EBU9QDWJ1GD|   12222213|B00N1YPXW2|     165236328| 2015-08-31|\n|R1WCUI4Z1SIQEO|   46018513|B001N4GRGS|     134151483| 2015-08-31|\n| RL5LNO26GAVJ1|   10225065|B009PJRMHQ|     694166585| 2015-08-31|\n|R3GYQ5W8JHP8SB|    6356995|B00NKBDAZS|     446431775| 2015-08-31|\n|R30SHYQXGG5EYC|   35297198|B006MIU7U2|     125871705| 2015-08-31|\n|R14YLXA56NP51I|   32139520|B000FIBD0I|     771888534| 2015-08-31|\n|R1ZH0HSH38IOTZ|   36060782|B0002E52GG|      68535945| 2015-08-31|\n|R3H53KLLC210XI|    5301309|B00RZIH52G|     725541773| 2015-08-31|\n|R3OOR877NGA8JK|   37472935|B001792BAU|      46570323| 2015-08-31|\n|R1BY7WKOZ3KMH0|   33578270|B009GSKW1Y|     547963417| 2015-08-31|\n| RXP1TFSWE8EG9|   22070226|B0002F4TKA|     436074323| 2015-08-31|\n|R3J44DPP12OTLJ|   52862655|B00K17YFBW|      81933093| 2015-08-31|\n| RFOV69SK0T676|    4427243|B00EQ24HJS|     669249276| 2015-08-31|\n|R2HUWDNW62FOL3|   14108571|B00IBOYTUE|     749537231| 2015-08-31|\n|R1KSU30XZGR452|   27314089|B00FBRUSAE|     792472601| 2015-08-31|\n|R2TZVLLTSHA07N|   16735445|B0113D2QUO|     269114019| 2015-08-31|\n+--------------+-----------+----------+--------------+-----------+\nonly showing top 20 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20200728-234919_1381902633",
+      "dateCreated": "2020-07-28 23:49:19.000",
+      "dateStarted": "2020-08-07 23:17:27.828",
+      "dateFinished": "2020-08-07 23:17:28.976",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\nproducts_df \u003d musical_instruments_df.select([\"product_id\", \"product_title\"]).drop_duplicates()\nproducts_df.show(10)",
+      "user": "",
+      "dateUpdated": "2020-08-07 23:17:53.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+----------+--------------------+\n|product_id|       product_title|\n+----------+--------------------+\n|B003WZXSWM|Grover 205BC Mini...|\n|B00ASHQQKI|SUPERNIGHT 5050 1...|\n|B000T4BC1I|Aulos A211A/A511B...|\n|B005I0HTCY|Neewer Black 3.5m...|\n|B00JJ18VIE|Reliable Hardware...|\n|B00US77MXI|Pick Geek Guitar ...|\n|B00S5O7HZO|Glory B Flat Clar...|\n|B007CPU1A0|Meinl Headliner T...|\n|B0002E3D9Y|PACK A STAND Clar...|\n|B00J3W1F96|Zildjian 5A Acorn...|\n+----------+--------------------+\nonly showing top 10 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20200728-234919_522612148",
+      "dateCreated": "2020-07-28 23:49:19.000",
+      "dateStarted": "2020-08-07 23:17:28.979",
+      "dateFinished": "2020-08-07 23:17:53.812",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\nreviews_df \u003d musical_instruments_df.select([\"review_id\", \"review_headline\", \"review_body\"]).drop_duplicates()\nreviews_df.show(10)",
+      "user": "",
+      "dateUpdated": "2020-08-07 23:18:30.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+--------------+--------------------+--------------------+\n|     review_id|     review_headline|         review_body|\n+--------------+--------------------+--------------------+\n|R1ZH0HSH38IOTZ|My son\u0027s favourit...|Consistent qualit...|\n| RV3TIJGJ48ZHY|          Five Stars|  Thanks!\u003cbr /\u003e  LTS|\n|R2HNDF2MY1L0LW|          Five Stars|               great|\n| RHB48D8W297N4|Sound was good bu...|The remote didn\u0027t...|\n|R3AL5VFCEHOCEH|Great iPhone inte...|Great device and ...|\n|R2ZIMNUC9E9QL8|          Five Stars|          Good picks|\n|R2BRDP4SVL12FW|The guests loved ...|Bought these for ...|\n|R3DMXVX84TC5LJ|           Smart buy|Very pleased with...|\n|R3ILSKMQYNX7JP|Great violin for ...|Great violin for ...|\n|R3VPXPNG42RQKL|        Poor quality|The knob broke of...|\n+--------------+--------------------+--------------------+\nonly showing top 10 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20200728-234919_1261755566",
+      "dateCreated": "2020-07-28 23:49:19.000",
+      "dateStarted": "2020-08-07 23:17:53.814",
+      "dateFinished": "2020-08-07 23:18:30.459",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\ncustomers_df \u003d musical_instruments_df.groupby(\"customer_id\").agg({\"customer_id\": \"count\"}).withColumnRenamed(\"count(customer_id)\", \"customer_count\").drop_duplicates()\ncustomers_df.show()",
+      "user": "",
+      "dateUpdated": "2020-08-07 23:18:56.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+-----------+--------------+\n|customer_id|customer_count|\n+-----------+--------------+\n|    9163460|             2|\n|   50809283|             1|\n|   13005724|             1|\n|   51506042|             1|\n|   48752158|            22|\n|   12318800|             2|\n|   26246534|             2|\n|   47577568|             1|\n|   15963400|            10|\n|     134314|             1|\n|   32457519|             1|\n|   23389022|             9|\n|   32604233|             1|\n|    3430931|             8|\n|   22387890|             2|\n|     847650|             1|\n|   14633838|             3|\n|   11886080|             1|\n|    2664669|             1|\n|   23389273|             1|\n+-----------+--------------+\nonly showing top 20 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20200728-234919_1098610210",
+      "dateCreated": "2020-07-28 23:49:19.000",
+      "dateStarted": "2020-08-07 23:18:30.462",
+      "dateFinished": "2020-08-07 23:18:56.517",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\nvine_df \u003d musical_instruments_df.select([\"review_id\", \"star_rating\", \"helpful_votes\", \"total_votes\", \"vine\"]).drop_duplicates()\nvine_df.show(10)",
+      "user": "",
+      "dateUpdated": "2020-08-07 23:19:24.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "data": "+--------------+-----------+-------------+-----------+----+\n|     review_id|star_rating|helpful_votes|total_votes|vine|\n+--------------+-----------+-------------+-----------+----+\n|R31OIOD3CP2FB1|          4|            0|          0|   N|\n|R305KWI3KUXZXL|          1|            0|          1|   N|\n| RP2ANS7W0GPWY|          5|            0|          0|   N|\n|R39BU4Q0BMH4X5|          1|            1|          2|   N|\n|R1RHM0E24VMWTU|          5|            0|          0|   N|\n| RUE8HYKC651I9|          5|            0|          1|   N|\n|R1ZFEOXT6R71AD|          3|            0|          0|   N|\n|R16HC2LDVNEZG5|          4|            0|          1|   N|\n|R32TGGBBP6XLXI|          4|            0|          0|   N|\n|R1VWTMMQJLCYS5|          5|            0|          0|   N|\n+--------------+-----------+-------------+-----------+----+\nonly showing top 10 rows\n\n",
+            "type": "TEXT"
+          }
+        ]
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20200728-234919_1657735237",
+      "dateCreated": "2020-07-28 23:49:19.000",
+      "dateStarted": "2020-08-07 23:18:56.519",
+      "dateFinished": "2020-08-07 23:19:24.590",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\nmode \u003d \"append\"\njdbc_url\u003d\"jdbc:postgresql://database-2.ckzmtircltrx.us-east-2.rds.amazonaws.com:5432/postgres\"\nconfig \u003d {\"user\":\"postgres\", \"password\": \"postgres\", \"driver\":\"org.postgresql.Driver\"}",
+      "user": "",
+      "dateUpdated": "2020-08-07 23:26:15.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20200728-234919_1311281765",
+      "dateCreated": "2020-07-28 23:49:19.000",
+      "dateStarted": "2020-08-07 23:26:15.637",
+      "dateFinished": "2020-08-07 23:26:15.807",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# Write review_id_df to table in RDS\nreviews_df.write.jdbc(url\u003djdbc_url, table\u003d\u0027reviews\u0027, mode\u003dmode, properties\u003dconfig)",
+      "user": "",
+      "dateUpdated": "2020-08-07 23:28:25.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20200802-141612_567138946",
+      "dateCreated": "2020-08-02 14:16:12.000",
+      "dateStarted": "2020-08-07 23:26:26.052",
+      "dateFinished": "2020-08-07 23:28:25.037",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# Write review_id_df to table in RDS\nreview_id_df.write.jdbc(url\u003djdbc_url, table\u003d\u0027review_id_table\u0027, mode\u003dmode, properties\u003dconfig)",
+      "user": "",
+      "dateUpdated": "2020-08-07 23:32:54.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20200728-234919_588572322",
+      "dateCreated": "2020-07-28 23:49:19.000",
+      "dateStarted": "2020-08-07 23:29:05.445",
+      "dateFinished": "2020-08-07 23:32:54.364",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# Write products_df to table in RDS\nproducts_df.write.jdbc(url\u003djdbc_url, table\u003d\u0027products\u0027, mode\u003dmode, properties\u003dconfig)",
+      "user": "",
+      "dateUpdated": "2020-08-07 23:34:28.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20200728-234919_960781956",
+      "dateCreated": "2020-07-28 23:49:19.000",
+      "dateStarted": "2020-08-07 23:33:37.605",
+      "dateFinished": "2020-08-07 23:34:28.206",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# Write customers_df to table in RDS\ncustomers_df.write.jdbc(url\u003djdbc_url, table\u003d\u0027customers\u0027, mode\u003dmode, properties\u003dconfig)",
+      "user": "",
+      "dateUpdated": "2020-08-07 23:36:11.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20200728-234919_592704713",
+      "dateCreated": "2020-07-28 23:49:19.000",
+      "dateStarted": "2020-08-07 23:34:54.361",
+      "dateFinished": "2020-08-07 23:36:11.348",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "%pyspark\n# Write vine_df to table in RDS\nvine_df.write.jdbc(url\u003djdbc_url, table\u003d\u0027vine_table\u0027, mode\u003dmode, properties\u003dconfig)",
+      "user": "",
+      "dateUpdated": "2020-08-07 23:38:19.000",
+      "config": {
+        "selectedInterpreter": {
+          "name": "spark.pyspark",
+          "profile": "pyspark",
+          "isCustom": false,
+          "editorLanguage": "python",
+          "className": "org.apache.zeppelin.spark.PySparkInterpreter",
+          "isDefault": false
+        },
+        "colWidth": 12.0,
+        "results": [
+          {}
+        ],
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20200728-234919_702734716",
+      "dateCreated": "2020-07-28 23:49:19.000",
+      "dateStarted": "2020-08-07 23:36:41.208",
+      "dateFinished": "2020-08-07 23:38:19.716",
+      "status": "FINISHED",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    },
+    {
+      "title": "",
+      "text": "",
+      "user": "",
+      "dateUpdated": "2020-07-28 23:50:05.000",
+      "config": {},
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "jobName": "",
+      "id": "20200728-235005_296197603",
+      "dateCreated": "2020-07-28 23:50:05.000",
+      "dateStarted": "2020-08-02 14:47:34.000",
+      "dateFinished": "2020-08-02 14:47:34.000",
+      "status": "READY",
+      "errorMessage": "",
+      "progressUpdateIntervalMs": 0
+    }
+  ],
+  "name": "level_1a",
+  "id": "2FHC524G9",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "looknfeel": "juno"
+  },
+  "info": {}
+}
